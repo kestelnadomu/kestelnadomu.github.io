@@ -2,15 +2,16 @@
 
 // constants
 $bg: #f0f1eb !default;
-$fg: #000030 !default;
+$fg: #000000 !default;
 $primary: #000030 !default;
-$secondary: #00883a !default;
+$secondary: #005d3a !default;
 
 // logos
 $soda: "img/Logo_SODA.svg" !default;
 $lmu: "img/LMU_Logo_RGB_InvertiertSchwarz.png" !default;
 $mcml: "img/MCML_Logo_RGB_black.png" !default;
 $ada: "img/ADA_Avatar_1.svg" !default;
+$bidt: "img/bidt-logo.png" !default;
 // $ondatix: "img/ondatix.svg" !default;
 
 @import "_common.scss";

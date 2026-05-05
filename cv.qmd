@@ -126,32 +126,15 @@ title: "Curriculum Vitae"
 
 [[Preprint](https://neurosymbolic-ai-journal.com/paper/neurosymbolic-architectures-algorithmic-fairness-0)][[Illustration](https://kestelnadomu.github.io/nesy_bimi_illustration/)]
 
-<!-- Citation:
-```{.bibtex}
-@article{kestel_nesybimi2026,
-  title={Neurosymbolic Architcetures for Algorithmic Fairness},
-  author={Kestel, Leonhard and Kern, Christoph},
-  year={2026}
-}
-``` -->
 :::
 
 ### Accepted / Published
 
 ::: {.callout collapse="true"}
 ##### A Neurosymbolic Approach to Counterfactual Fairness
-Heilmann, X., Manganini, C., Cerrato, M., *Kestel, L.*, & Belle, V. (2026). *A Neurosymbolic Approach to Counterfactual Fairness*.
+Heilmann, X., Manganini, C., Cerrato, M., Kestel, L., & Belle, V. (2026). *A Neurosymbolic Approach to Counterfactual Fairness*. In *Neurosymbolic Artificial Intelligence*.
 
-[[Preprint](https://neurosymbolic-ai-journal.com/paper/neurosymbolic-approach-counterfactual-fairness-0)]
-
-<!-- Citation:
-```{.bibtex}
-@article{heilmann_nesycf2026,
-  title={A Neurosymbolic Approach to Counterfactual Fairness},
-  author={Heilmann, Xenia and Manganini, Chiara and Cerrato, Mattia and Kestel, Leonhard and Belle, Vaishak},
-  year={2026}
-}
-``` -->
+[[Paper](https://doi.org/10.1177/29498732261443184)]
 :::
 :::
 

@@ -16,9 +16,9 @@ about:
     # - text: ResearchGate
     #   icon: journal
     #   url: "https://www.researchgate.net/profile/Catalina-Albury"
-    # - text: Scholar
-    #   icon: journal
-    #   url: "https://www.researchgate.net/profile/Catalina-Albury"
+    - text: Scholar
+      icon: journal
+      url: "https://scholar.google.com/citations?user=VQ63JF0AAAAJ&hl=en&oi=ao"
     - text: Email
       icon: envelope
       url: "mailto:leo.kestel@lmu.de"
@@ -32,19 +32,22 @@ I am a PhD candidate at the *Social Data Science and AI* Lab, which is part of t
 
 With a background in Psychology and Computer Science, I am a native to interdisciplinary research with focus on the application of Machine Learning algorithms in social sciences and the public sector.
   
-In my research I try to use Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.
+In my research
+<!-- - for which I received a scholarship from the Bavarian Institute for Digital Transformation (*bidt*) -  -->
+I try to use Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.
 
 I am a member of the *ADA* initiative and a co-founder of *ondatix Datenwerkstatt GmbH*, which both aim to support the public administration with data scientific expertise and tools. Therefore, we organise workshops and develop applications for public servants.
 
-**Keywords:** Neurosymbolic AI, Algorithmic Fairness, Trustworthy ML
+<!-- **Keywords:** Neurosymbolic AI, Algorithmic Fairness, Trustworthy ML -->
 
 
 ## Affiliations
 [<img class="soda">](https://www.stat.lmu.de/soda)
-[<img class="mcml">](https://www.mcml.ai)
 [<img class="lmu">](https://www.stat.lmu.de)
+[<img class="mcml">](https://www.mcml.ai)
+[<img class="bidt">](https://www.bidt.digital)
 [<img class="ada">](https://www.ada-oeffentliche-verwaltung.de)
-<!-- [<img class="ondatix">](https://www.ondatix.de) -->
+<!-- [<img class="ondatix">](https://www.ondatix.org) -->
 
 :::
 
