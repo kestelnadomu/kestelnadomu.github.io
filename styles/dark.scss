@@ -21,6 +21,10 @@ $bidt: "img/bidt-logo-dark.png" !default;
    EMPHASIS — COLOR ONLY, NO BOLD
    ============================== */
 
+a {
+  font-weight: normal !important;
+}
+
 strong, b, h1, h2, h3, h4, h5, h6, em, it {
   font-weight: normal !important;
   font-style: normal !important;

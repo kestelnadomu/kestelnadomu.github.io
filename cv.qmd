@@ -21,9 +21,9 @@ title: "Curriculum Vitae"
 ### M.Sc. Computing in the Humanities [10/2021 - 09/2024]{style="float:right"}
 * University of Bamberg (DE)
 * Focus: Cognitive Systems
-* Thesis: *Tree-Vitality Classification from Image Data: A Comparison of Multispectral Index Scores and Deep Learning Approaches* (Grade: 1.0)
+* Thesis: *Tree-Vitality Classification from Image Data: A Comparison of Multispectral Index Scores and Deep Learning Approaches*
 * Advisor: Prof. Dr. Ute Schmid
-* Final grade: 1.3
+<!-- * Final grade: 1.3 -->
 
 [[Website](https://www.uni-bamberg.de/kogsys/)]
 :::
@@ -50,9 +50,9 @@ title: "Curriculum Vitae"
 ::: {.callout collapse="true"}
 ### B.Sc. Psychology [10/2018 - 09/2022]{style="float:right"}
 * University of Bamberg (DE)
-* Thesis: *Affecting Insight: The Influence of Negative Affect on Creative and Analytic Thought* (Grade: 1.3)
+* Thesis: *Affecting Insight: The Influence of Negative Affect on Creative and Analytic Thought*
 * Advisor: Prof. Dr. Jascha Rüsseler
-* Final grade: 2.0
+<!-- * Final grade: 2.0 -->
 :::
 
 ## Professional
@@ -63,7 +63,7 @@ title: "Curriculum Vitae"
 * Data Science and AI Consulting and Software Development for the Public Sector
 * Located in Munich (DE)
 
-[[Website](https://www.ondatix.de)]
+[[Website](https://www.ondatix.org)]
 [[GitHub](https://github.com/ondatix)]
 :::
 
@@ -89,7 +89,7 @@ title: "Curriculum Vitae"
 
 ::: {.callout collapse="true"}
 ### Bytabo GmbH [02/2024 - 07/2024]{style="float:right"}
-* *Data Scientist and AI Engineer (Trainee)*
+* *Data Scientist and AI Engineer*
 * Engineering of Python-backends
 * Training and deployment of Machine Learning models for price regression (CatBoost) and time series prediction (LSTM)
 * Development of RAG interfaces
@@ -100,7 +100,7 @@ title: "Curriculum Vitae"
 ### Chair of Cognitive Systems, University of Bamberg [06/2023 - 09/2023]{style="float:right"}
 * *Teaching Assistant*
 * Introduction to Artificial Intelligence (Bachelor level)
-* Concipation and correction of assignments
+* Preparation and correction of assignments
 * Tutorials for ∼40 students
 
 [[Website](https://www.uni-bamberg.de/kogsys/)]
@@ -118,6 +118,16 @@ title: "Curriculum Vitae"
 ## Publications
 
 ::: {.panel-tabset}
+
+### Accepted / Published
+
+::: {.callout collapse="true"}
+##### A Neurosymbolic Approach to Counterfactual Fairness
+Heilmann, X., Manganini, C., Cerrato, M., *Kestel, L.*, & Belle, V. (2026). *A Neurosymbolic Approach to Counterfactual Fairness*. In *Neurosymbolic Artificial Intelligence* (2). doi: [10.1177/29498732261443184](https://doi.org/10.1177/29498732261443184)
+
+<!-- [[Paper](https://doi.org/10.1177/29498732261443184)] -->
+:::
+
 ### In Review
 
 ::: {.callout collapse="true"}
@@ -127,15 +137,23 @@ title: "Curriculum Vitae"
 [[Preprint](https://neurosymbolic-ai-journal.com/paper/neurosymbolic-architectures-algorithmic-fairness-0)][[Illustration](https://kestelnadomu.github.io/nesy_bimi_illustration/)]
 
 :::
+:::
 
-### Accepted / Published
+## Awards & Fellowships
+::: {.callout collapse="true"}
+### Bavarian Institute for Digital Transformation (bidt) [2026]{style="float:right"}
+* *Fellow*
+* Graduate Center for Doctoral Researchers
+
+[[Website](https://en.bidt.digital/funding/graduate-center-for-doctoral-researchers/)]
+:::
 
 ::: {.callout collapse="true"}
-##### A Neurosymbolic Approach to Counterfactual Fairness
-Heilmann, X., Manganini, C., Cerrato, M., Kestel, L., & Belle, V. (2026). *A Neurosymbolic Approach to Counterfactual Fairness*. In *Neurosymbolic Artificial Intelligence*.
+### Munich Center for Machine Learning (MCML) [2025]{style="float:right"}
+* *Affiliated Junior Researcher*
+* German AI Competence Center
 
-[[Paper](https://doi.org/10.1177/29498732261443184)]
-:::
+[[Website](https://mcml.ai)]
 :::
 
 ## Teaching
@@ -203,7 +221,7 @@ Heilmann, X., Manganini, C., Cerrato, M., Kestel, L., & Belle, V. (2026). *A Neu
 
 ::: {.callout collapse="true"}
 ### Family Support Service [2018 - 2022]{style="float:right"}
-* Role: Carer for people with intellectual disabilities 
+* Role: Caregiver for people with intellectual disabilities 
 * Organisation: Lebenshilfe gGmbH (Munich and Bamberg)
 
 [[Website](https://www.lebenshilfe.de/)]
@@ -211,7 +229,7 @@ Heilmann, X., Manganini, C., Cerrato, M., Kestel, L., & Belle, V. (2026). *A Neu
 
 ::: {.callout collapse="true"}
 ### Voluntary Gap Year [2017 - 2018]{style="float:right"}
-* Role: Carer for people with intellectual disabilities 
+* Role: Caregiver for people with intellectual disabilities 
 * Organisation: OBA München
 
 [[Website](https://www.oba-muenchen.de/)]
@@ -219,7 +237,7 @@ Heilmann, X., Manganini, C., Cerrato, M., Kestel, L., & Belle, V. (2026). *A Neu
 
 ::: {.callout collapse="true"}
 ### Lutheran Youth Organisation Munich (EJM) [2014 - now]{style="float:right"}
-* Role: Organizing role in children’s and youth camps  
+* Role: Organisation of children’s and youth camps  
 * Organisation: Lutheran Youth Organisation Munich (EJM)
 
 [[Website](https://www.ej-muenchen.de/)]
