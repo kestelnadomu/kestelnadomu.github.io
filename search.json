@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Leonhard Kestel",
-    "section": "",
-    "text": "I am a PhD candidate at the Social Data Science and AI Lab, which is part of the Statistics Department of the Ludwig-Maximilians-Universität in Munich.\nWith a background in Psychology and Computer Science, I am a native to interdisciplinary research with focus on the application of Machine Learning algorithms in social sciences and the public sector.\nIn my research  I try to use Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.\nI am a member of the ADA initiative and a co-founder of ondatix Datenwerkstatt GmbH, which both aim to support the public administration with data scientific expertise and tools. Therefore, we organise workshops and develop applications for public servants."
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Leonhard Kestel",
-    "section": "",
-    "text": "I am a PhD candidate at the Social Data Science and AI Lab, which is part of the Statistics Department of the Ludwig-Maximilians-Universität in Munich.\nWith a background in Psychology and Computer Science, I am a native to interdisciplinary research with focus on the application of Machine Learning algorithms in social sciences and the public sector.\nIn my research  I try to use Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.\nI am a member of the ADA initiative and a co-founder of ondatix Datenwerkstatt GmbH, which both aim to support the public administration with data scientific expertise and tools. Therefore, we organise workshops and develop applications for public servants."
-  },
-  {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "Curriculum Vitae",
@@ -26,5 +12,19 @@
     "title": "Projects",
     "section": "",
     "text": "Feel free to contact me if you are interested in any of my projects!\n\nAcademicIndustry\n\n\n\n\n\n\n\n\nNoneEthical AI through Neurosymbolic Methods\n\n\n\n\n\nIn this project, we develop a principled neurosymbolic framework for embedding ethical and legal constraints directly into neural models. Motivated by the growing influence of AI systems in high-stakes domains such as hiring, healthcare, and public administration, the work addresses a central problem of contemporary AI: ethical guidelines are typically implemented implicitly by a small group of technical experts and private actors, rendering normative control opaque and inaccessible to broader stakeholders. We argue that trustworthy AI requires transparent, controllable, and formally grounded mechanisms for aligning model behavior with societal values.\nThe core contribution of our work is the design of different Neurosymbolic architectures that integrate neural learning with symbolic reasoning over logical constraints. The proposed approaches introduce an explicit interface between neural latent spaces and declarative ethical specifications formalized as logic-based rules or structural causal models. Thereby, they enable interpretable, modular, and adaptable alignment mechanisms that remain agnostic to specific definitions of abstract concepts, such as fairness or harm.\n\nOverall, this projects contributes a unifying technical and conceptual framework for ethical AI alignment, advancing neurosymbolic methods as a viable foundation for transparent, accountable, and democratically governable AI systems.\n\n\nPublications\n\n\n\n\n\n\n\n\nNoneNeurosymbolic Architectures for Algorithmic Fairness\n\n\n\n\n\nKestel, L., & Kern, C. (2026). Neurosymbolic Architectures for Algorithmic Fairness.\n[Preprint][Illustration]\n\n\n\n\n\n\n\n\n\nNoneA Neurosymbolic Approach to Counterfactual Fairness\n\n\n\n\n\nHeilmann, X., Manganini, C., Cerrato, M., Kestel, L., & Belle, V. (2026). A Neurosymbolic Approach to Counterfactual Fairness. In Neurosymbolic Artificial Intelligence (2). doi: 10.1177/29498732261443184\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoneADA\n\n\n\n\n\nData enables us to make better decisions. Procedures and processes can be automated and simplified. Data helps to reflect reality and thus develop tailor-made, evidence-based solutions. However, public administration often lacks the know-how to collect, understand, and make optimal use of the necessary data.\nADA (Applied Data Analytics for the Public Administration) brings together administrative and scientific data expertise to understand problems and find pragmatic solutions. The main goal is to empower public administration employees to use their data efficiently and responsibly.\n[Website] [GitHub]  \n\nGDANationalparkStMAS\n\n\n[Project Page] [GitHub Repo]\n\n\n[Project Page]\n\n\n[Project Page] \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoneondatix Datenwerkstatt\n\n\n\n\n\nThe ondatix Datenwerkstatt is a data science consultancy and software company based in Munich. We help public servants to make better use of their data by providing data-driven solutions to their problems. My main focus is on the development of software solutions to support the administration to work more effectively, efficiently and trustworthy with data.\n[Website] [GitHub]"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Leonhard Kestel",
+    "section": "",
+    "text": "I am a PhD candidate at the Social Data Science and AI Lab, which is part of the Statistics Department of the Ludwig-Maximilians-Universität in Munich.\nWith a background in Psychology and Computer Science, I am a native to interdisciplinary research with focus on the application of Machine Learning algorithms in social sciences and the public sector.\nIn my research  I try to use Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.\nI am a member of the ADA initiative and a co-founder of ondatix Datenwerkstatt GmbH, which both aim to support the public administration with data scientific expertise and tools. Therefore, we organise workshops and develop applications for public servants."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Leonhard Kestel",
+    "section": "",
+    "text": "I am a PhD candidate at the Social Data Science and AI Lab, which is part of the Statistics Department of the Ludwig-Maximilians-Universität in Munich.\nWith a background in Psychology and Computer Science, I am a native to interdisciplinary research with focus on the application of Machine Learning algorithms in social sciences and the public sector.\nIn my research  I try to use Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.\nI am a member of the ADA initiative and a co-founder of ondatix Datenwerkstatt GmbH, which both aim to support the public administration with data scientific expertise and tools. Therefore, we organise workshops and develop applications for public servants."
   }
 ]
