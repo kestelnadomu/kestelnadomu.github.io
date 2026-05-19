@@ -30,6 +30,9 @@ format:
     footnotes-hover: false
     crossrefs-hover: false
 
+execute: 
+  freeze: auto
+
 
 
 
