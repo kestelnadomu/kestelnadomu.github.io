@@ -1,1 +1,1 @@
-Sitemap: https://www.leokestel.de/sitemap.xml
+Sitemap: https://kestelnadomu.github.io/sitemap.xml
