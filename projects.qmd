@@ -24,23 +24,26 @@ Overall, this projects contributes a unifying technical and conceptual framework
 #### Publications
 
 ::: {.callout collapse="true"}
-##### Neurosymbolic Architectures for Algorithmic Fairness
-Kestel, L., & Kern, C. (2026). *Neurosymbolic Architectures for Algorithmic Fairness*.
-
-[[Preprint](https://neurosymbolic-ai-journal.com/paper/neurosymbolic-architectures-algorithmic-fairness-0)][[Illustration](https://kestelnadomu.github.io/nesy_bimi_illustration/)]
-:::
-
-::: {.callout collapse="true"}
 ##### A Neurosymbolic Approach to Counterfactual Fairness
 Heilmann, X., Manganini, C., Cerrato, M., *Kestel, L.*, & Belle, V. (2026). *A Neurosymbolic Approach to Counterfactual Fairness*. In *Neurosymbolic Artificial Intelligence* (2). doi: [10.1177/29498732261443184](https://doi.org/10.1177/29498732261443184)
 
 <!-- [[Paper](https://doi.org/10.1177/29498732261443184)] -->
 :::
 
+#### In Review
+::: {.callout collapse="true"}
+##### Counterfactual Latent Representations: A Neurosymbolic Approach
+Kestel, L., & Kern, C. (2026). *Counterfactual Latent Representations: A Neurosymbolic Approach*.
 
-<!-- #### Grants
-* AI.Bay? -->
+[[Poster](https://leokestel.de/latent_intervention/)]
+:::
 
+::: {.callout collapse="true"}
+##### Neurosymbolic Architectures for Algorithmic Fairness
+Kestel, L., & Kern, C. (2026). *Neurosymbolic Architectures for Algorithmic Fairness*.
+
+[[Preprint](https://neurosymbolic-ai-journal.com/paper/neurosymbolic-architectures-algorithmic-fairness-0)][[Illustration](https://kestelnadomu.github.io/nesy_bimi_illustration/)]
+:::
 :::
 
 :::

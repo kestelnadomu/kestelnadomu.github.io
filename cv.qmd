@@ -129,6 +129,12 @@ Heilmann, X., Manganini, C., Cerrato, M., *Kestel, L.*, & Belle, V. (2026). *A N
 :::
 
 ### In Review
+::: {.callout collapse="true"}
+##### Counterfactual Latent Representations: A Neurosymbolic Approach
+Kestel, L., & Kern, C. (2026). *Counterfactual Latent Representations: A Neurosymbolic Approach*.
+
+[[Poster](https://leokestel.de/latent_intervention/)]
+:::
 
 ::: {.callout collapse="true"}
 #### Neurosymbolic Architcetures for Algorithmic Fairness
