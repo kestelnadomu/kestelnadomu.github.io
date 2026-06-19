@@ -29,20 +29,28 @@ comments: false
 ::: {.column-page}
 
 ## About
-I am a PhD candidate at the *Social Data Science and AI* Lab, which is part of the Statistics Department of the Ludwig-Maximilians-Universität in Munich. 
+- **PhD candidate and junior researcher at**:
+  - LMU Munich (PhD candidate at the SODA Lab, Department of Statistics)
+  - Munich Center of Machine Learning (Junior Resarcher)
+  - Bavarian Research Institute for Digital Transformation (Junior Fellow)
 
-With a background in Psychology and Computer Science, I am a native to interdisciplinary research with focus on the application of Machine Learning algorithms in social sciences and the public sector.
-  
-In my research
-<!-- - for which I received a scholarship from the Bavarian Institute for Digital Transformation (*bidt*) -  -->
-I try to use Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.
+- **Interdisciplinary background**:
+  - Psychology
+  - Computer Science
+  - Statistics and Data Science
 
-I am a member of the *ADA* initiative and a co-founder of *ondatix Datenwerkstatt GmbH*, which both aim to support the public administration with data scientific expertise and tools. Therefore, we organise workshops and develop applications for public servants.
+- **Research**
+  - Broad: Application of Machine Learning algorithms in social sciences and the public sector.
+  - Focus: Neurosymbolic architectures as an interface to incorporate arbitrary ethical constraints, formalized in logic or as causal graphs, into the machine learning process.
 
-<!-- **Keywords:** Neurosymbolic AI, Algorithmic Fairness, Trustworthy ML -->
+- **Public Sector**:
+  - Member of the ADA initiative at the SODA Lab, which aims to support the public administration with data scientific expertise
+  - Co-founder of ondatix Datenwerkstatt GmbH, an ADA spin-off with focus on Open-Source Data Science software for the public sector.
+
+**Keywords:** Neurosymbolic AI, Algorithmic Fairness, Trustworthy ML, Public Sector
 
 
-## Affiliations
+<!-- ## Affiliations -->
 
 | | | | | | |
 |-|-|-|-|-|-|

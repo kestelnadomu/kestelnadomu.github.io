@@ -25,7 +25,7 @@ format:
     theme:
       dark: [cosmo, styles/dark.scss]
       light: [cosmo, styles/light.scss]
-    toc: true
+    toc: false
     citations-hover: false
     footnotes-hover: false
     crossrefs-hover: false
