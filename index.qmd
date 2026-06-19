@@ -19,7 +19,7 @@ about:
     #   url: "https://www.researchgate.net/profile/Catalina-Albury"
     - text: Scholar
       icon: journal
-      url: "https://scholar.google.com/citations?user=VQ63JF0AAAAJ&hl=en&oi=ao"
+      url: "https://scholar.google.com/citations?user=Jru3er4AAAAJ&hl=en&oi=ao"
     - text: Email
       icon: envelope
       url: "mailto:leo.kestel@lmu.de"
@@ -43,12 +43,10 @@ I am a member of the *ADA* initiative and a co-founder of *ondatix Datenwerkstat
 
 
 ## Affiliations
-[<img class="soda" alt="SODA">](https://www.stat.lmu.de/soda)
-[<img class="lmu" alt="LMU">](https://www.lmu.de)
-[<img class="mcml" alt="MCML">](https://www.mcml.ai)
-[<img class="bidt" alt="bidt">](https://www.bidt.digital)
-[<img class="ada" alt="ADA">](https://www.ada-oeffentliche-verwaltung.de)
-<!-- [<img class="ondatix" alt="ondatix">](https://www.ondatix.org) -->
+
+| | | | | | |
+|-|-|-|-|-|-|
+| [<img class="soda" alt="SODA">](https://www.stat.lmu.de/soda) | [<img class="lmu" alt="LMU">](https://www.lmu.de) | [<img class="mcml" alt="MCML">](https://www.mcml.ai) | [<img class="bidt" alt="bidt">](https://www.bidt.digital) | [<img class="ada" alt="ADA">](https://www.ada-oeffentliche-verwaltung.de) | [<img class="ondatix" alt="ondatix">](https://www.ondatix.org) | 
 
 
 :::

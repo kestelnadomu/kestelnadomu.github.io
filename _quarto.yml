@@ -11,8 +11,8 @@ website:
       #   text: Home
       - projects.qmd
       # - teaching.qmd
-      - href: cv.qmd
-        text: CV
+      # - href: cv.qmd
+      #   text: CV
 
   page-footer:
     left: "© 2026 Leonhard Kestel"

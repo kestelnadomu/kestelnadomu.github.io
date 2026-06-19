@@ -2,12 +2,12 @@
 title: "Projects"
 ---
 
-Feel free to [contact me](mailto:leo.kestel@lmu.de) if you are interested in any of my projects!
+<!-- Feel free to [contact me](mailto:leo.kestel@lmu.de) if you are interested in any of my projects! -->
 
 ::: {.panel-tabset}
 ## Academic
 
-::: {.callout collapse="true"}
+::: {.callout collapse="false"}
 ### Ethical AI through Neurosymbolic Methods
 
 In this project, we develop a principled neurosymbolic framework for embedding ethical and legal constraints directly into neural models. Motivated by the growing influence of AI systems in high-stakes domains such as hiring, healthcare, and public administration, the work addresses a central problem of contemporary AI: ethical guidelines are typically implemented implicitly by a small group of technical experts and private actors, rendering normative control opaque and inaccessible to broader stakeholders. We argue that trustworthy AI requires transparent, controllable, and formally grounded mechanisms for aligning model behavior with societal values.
@@ -17,7 +17,8 @@ The core contribution of our work is the design of different Neurosymbolic archi
 <!-- The framework is validated through several application domains: e.g. in the scenario of automated job interview analysis, where symbolic constraints will be used to mitigate demographic bias in multimodal hiring systems. Another use case is safety in large language models, where institutional guidelines as well as legal and ethical norms will be translated into formal constraints and enforced within embedding spaces. -->
 Overall, this projects contributes a unifying technical and conceptual framework for ethical AI alignment, advancing neurosymbolic methods as a viable foundation for transparent, accountable, and democratically governable AI systems.
 
-
+[[Website](https://www.stat.lmu.de/soda/en/research/research-projects/ethical-ai-through-neurosymbolic-methods/)]
+[[Mail](mailto:leo.kestel@lmu.de)]
 <!-- * [Pitchdeck](TODO) -->
 
 ::: {.panel-tabset}
@@ -25,7 +26,7 @@ Overall, this projects contributes a unifying technical and conceptual framework
 
 ::: {.callout collapse="true"}
 ##### A Neurosymbolic Approach to Counterfactual Fairness
-Heilmann, X., Manganini, C., Cerrato, M., *Kestel, L.*, & Belle, V. (2026). *A Neurosymbolic Approach to Counterfactual Fairness*. In *Neurosymbolic Artificial Intelligence* (2). doi: [10.1177/29498732261443184](https://doi.org/10.1177/29498732261443184)
+Heilmann, X., Manganini, C., Cerrato, M., *Kestel, L.*, & Belle, V. (2026). *A Neurosymbolic Approach to Counterfactual Fairness*. In *Neurosymbolic Artificial Intelligence* (2). doi: [[10.1177/29498732261443184](https://doi.org/10.1177/29498732261443184)]
 
 <!-- [[Paper](https://doi.org/10.1177/29498732261443184)] -->
 :::
@@ -44,37 +45,6 @@ Kestel, L., & Kern, C. (2026). *Neurosymbolic Architectures for Algorithmic Fair
 
 [[Preprint](https://neurosymbolic-ai-journal.com/paper/neurosymbolic-architectures-algorithmic-fairness-0)][[Illustration](https://kestelnadomu.github.io/nesy_bimi_illustration/)]
 :::
-:::
-
-:::
-
-
-::: {.callout collapse="true"}
-### ADA
-
-Data enables us to make better decisions. Procedures and processes can be automated and simplified. Data helps to reflect reality and thus develop tailor-made, evidence-based solutions. However, public administration often lacks the know-how to collect, understand, and make optimal use of the necessary data. 
-
-ADA (**A**pplied **D**ata **A**nalytics for the Public Administration) brings together administrative and scientific data expertise to understand problems and find pragmatic solutions. The main goal is to empower public administration employees to use their data efficiently and responsibly.
-
-[[Website](https://ada-oeffentliche-verwaltung.de)]
-[[GitHub](https://github.com/ada-bayern)]
-<!-- [[HDSR Article](TODO)] -->
- <!-- [Pitchdeck](TODO) -->
-
-::: {.panel-tabset}
-#### GDA
-[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/gda/)]
-[[GitHub Repo](https://github.com/ada-bayern/Stichprobenziehung)]
-
-#### Nationalpark
-[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/nationalpark/)]
-
-#### StMAS
-[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/stmas/)]
-<!-- [GitHub Repo](https://github.com/ada-bayern/) -->
-
-<!-- #### LfL
-[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/lfl/)] -->
 :::
 
 :::
@@ -101,16 +71,57 @@ ADA (**A**pplied **D**ata **A**nalytics for the Public Administration) brings to
 
 ::: -->
 
-## Industry
+## Public Sector
 
-::: {.callout collapse="false"}
+::: {.callout collapse="true"}
 ### ondatix Datenwerkstatt
-The ondatix Datenwerkstatt is a data science consultancy and software company based in Munich. We help public servants to make better use of their data by providing data-driven solutions to their problems. My main focus is on the development of software solutions to support the administration to work more effectively, efficiently and trustworthy with data.
+... is a data science consultancy and Open-Source software company based in Munich. We help public servants to make better use of their data by providing data-driven solutions to their problems. My main focus is on the development of software solutions to support the administration to work more effectively, efficiently and reliably with data.
 
 [[Website](https://www.ondatix.org)]
 [[GitHub](https://github.com/ondatix)]
+[[Mail](mailto:leo.kestel@ondatix.org)]
+
+
+::: {.panel-tabset}
+#### reportix
+... is a fully client-side web app for automated report generation tailored to the needs of public servants. Upload an Excel workbook or CSV files, map their sheets/columns to the report's data, fill in a parameter form, and export a styled ".docx" with predefined automated graphics and tables. All in the browser, no server, no network at runtime.
+
+[[GitHub Repo](https://github.com/ondatix/reportix)]
 :::
 
+:::
+
+
+::: {.callout collapse="true"}
+### ADA
+
+Data enables us to make better decisions. Procedures and processes can be automated and simplified. Data helps to reflect reality and thus develop tailor-made, evidence-based solutions. However, public administration often lacks the know-how to collect, understand, and make optimal use of the necessary data. 
+
+ADA (**A**pplied **D**ata **A**nalytics for the Public Administration) is an initiative at the SODA lab (LMU Munich) that brings together administrative and scientific data expertise to understand problems and find pragmatic solutions. The main goal is to empower public administration employees to use their data efficiently and responsibly.
+
+[[Website](https://ada-oeffentliche-verwaltung.de)]
+[[GitHub](https://github.com/ada-bayern)]
+[[Mail](mailto:data-analytics@stat.uni-muenchen.de)]
+<!-- [[HDSR Article](TODO)] -->
+ <!-- [Pitchdeck](TODO) -->
+
+::: {.panel-tabset}
+#### GDA
+[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/gda/)]
+[[GitHub Repo](https://github.com/ada-bayern/Stichprobenziehung)]
+
+#### Nationalpark
+[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/nationalpark/)]
+
+#### StMAS
+[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/stmas/)]
+<!-- [GitHub Repo](https://github.com/ada-bayern/) -->
+
+<!-- #### LfL
+[[Project Page](https://ada-oeffentliche-verwaltung.de/projekte/lfl/)] -->
+:::
+
+:::
 
 <!-- ## Cultural
 
