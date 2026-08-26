@@ -1,0 +1,481 @@
+---
+format:
+  # html: default
+  typst:
+    template-partials:
+      - typst-template.typ
+      - typst-show.typ
+    keep-typ: true
+cv-name: "Leonhard Kestel"
+cv-email: "leo.kestel@lmu.de"
+#cv-phone: "555-123-4567"
+cv-url: "leokestel.de"
+cv-orcid: "0009-0008-4549-4960"
+cv-github: "kestelnadomu"
+#cv-address: "Room 255, 1400 University Ave., City, ST 12345"
+cv-date: "August 2026"
+execute:
+  echo: false
+  warning: false
+  fig-keep: none
+---
+
+
+```{r}
+#| label: setup
+
+if (!interactive()) {
+  pdf(NULL)  # Prevent graphics device errors in non-interactive mode
+}
+
+library(yaml)
+
+# Load all data files
+experience <- yaml::read_yaml("data/experience.yml")
+education <- yaml::read_yaml("data/education.yml")
+grants <- yaml::read_yaml("data/grants.yml")
+teaching <- yaml::read_yaml("data/teaching.yml")
+projects <- yaml::read_yaml("data/projects.yml")
+honors <- yaml::read_yaml("data/honors.yml")
+presentations <- yaml::read_yaml("data/presentations.yml")
+service <- yaml::read_yaml("data/service.yml")
+extracurricular <- yaml::read_yaml("data/extracurricular.yml")
+```
+
+<!-- Research Interests (compact) -->
+
+```{=typst}
+// #cv-section("Research Interests")
+
+// #text(font: "Source Sans 3", size: 9.5pt, fill: color-gray)[
+//   Short summary...
+// ]
+
+// #cv-subsection("Keywords")
+
+#text(font: "Source Sans 3", weight: "bold", size: 9.5pt, fill: color-darkgray)[Keywords:]
+#text(font: "Source Sans 3", size: 9.5pt, fill: color-lightgray)[
+  Algorithmic Fairness #sym.dot.c
+  Neurosymbolic AI #sym.dot.c
+  Causal Aware Machine Learning #sym.dot.c
+  Data Science for the Public Sector
+]
+```
+
+<!-- Academic Appointments -->
+
+```{=typst}
+#cv-section("Experience")
+```
+
+```{r}
+#| output: asis
+for (a in experience) {
+  cat(sprintf(
+    '```{=typst}\n#cv-entry(\n  institution: "%s",\n  department: "%s",\n  location: "%s",\n  title: "%s",\n  date: "%s",\n)\n```\n\n',
+    a$institution, a$department, a$location, a$title, a$date
+  ))
+}
+```
+
+<!-- Projects -->
+
+```{=typst}
+#cv-section("Applied Projects")
+```
+
+```{r}
+#| output: asis
+for (t in projects) {
+  cat(sprintf(
+    '```{=typst}\n#cv-subsection("%s")\n```\n\n',
+    t$institution
+  ))
+  for (c in t$projects) {
+    cat(sprintf(
+      '```{=typst}\n#project-entry(project: "%s", role: "%s", date: "%s", href: "%s")\n```\n\n',
+      c$project, c$role, c$date, c$href %||% ""
+    ))
+  }
+}
+```
+
+<!-- Education -->
+
+```{=typst}
+#cv-section("Education")
+```
+
+```{r}
+#| output: asis
+for (e in education) {
+  details_str <- if (!is.null(e$details) && e$details != "") {
+    gsub('\n', ' ', trimws(e$details))
+  } else {
+    ""
+  }
+  # Escape quotes for Typst
+  details_str <- gsub('"', '\\\\"', details_str)
+
+  if (details_str != "") {
+    cat(sprintf(
+      '```{=typst}\n#edu-entry(\n  institution: "%s",\n  department: "%s",\n  degree: "%s",\n  date: "%s",\n  details: [%s],\n)\n```\n\n',
+      e$institution, e$department %||% "", e$degree, e$date, details_str
+    ))
+  } else {
+    cat(sprintf(
+      '```{=typst}\n#edu-entry(\n  institution: "%s",\n  department: "%s",\n  degree: "%s",\n  date: "%s",\n)\n```\n\n',
+      e$institution, e$department %||% "", e$degree, e$date
+    ))
+  }
+}
+```
+
+<!-- Peer-Reviewed Publications -->
+
+```{=typst}
+#cv-section("Publications")
+```
+
+```{r}
+#| output: asis
+
+# Read and parse BibTeX manually for full control
+bib_lines <- readLines("publications.bib")
+
+# Simple BibTeX parser
+parse_bib <- function(lines) {
+  entries <- list()
+  current <- NULL
+  brace_depth <- 0
+
+  for (line in lines) {
+    # Start of entry
+    if (grepl("^@", line)) {
+      if (!is.null(current)) entries <- c(entries, list(current))
+      current <- list(raw = "", type = sub("^@(\\w+)\\{.*", "\\1", line),
+                       key = sub("^@\\w+\\{([^,]+),.*", "\\1", line))
+      current$raw <- line
+      brace_depth <- nchar(gsub("[^{]", "", line)) - nchar(gsub("[^}]", "", line))
+      next
+    }
+
+    if (!is.null(current)) {
+      current$raw <- paste0(current$raw, "\n", line)
+      brace_depth <- brace_depth + nchar(gsub("[^{]", "", line)) - nchar(gsub("[^}]", "", line))
+
+      # Parse fields
+      if (grepl("^\\s*\\w+\\s*=", line)) {
+        field <- trimws(sub("^\\s*(\\w+)\\s*=.*", "\\1", line))
+        value <- trimws(sub("^\\s*\\w+\\s*=\\s*", "", line))
+        value <- gsub("[{}\"']", "", value)
+        value <- sub(",\\s*$", "", value)  # strip trailing comma only
+        value <- trimws(value)
+        current[[field]] <- value
+      }
+
+      if (brace_depth <= 0) {
+        entries <- c(entries, list(current))
+        current <- NULL
+      }
+    }
+  }
+  if (!is.null(current)) entries <- c(entries, list(current))
+  entries
+}
+
+entries <- parse_bib(bib_lines)
+
+# Format authors: "Last, F." style, bold your name
+# CUSTOMIZE: Change "Author" to your last name
+format_authors <- function(author_str) {
+  # Split by " and "
+  authors <- trimws(strsplit(author_str, "\\s+and\\s+")[[1]])
+
+  formatted <- sapply(authors, function(a) {
+    # Handle team names (no comma = not "Last, First" format)
+    if (!grepl(",", a)) return(a)
+
+    parts <- trimws(strsplit(a, ",")[[1]])
+    last <- parts[1]
+    first <- parts[2]
+    # Take first letter of first name
+    initial <- substr(trimws(first), 1, 1)
+
+    # CUSTOMIZE: Change "Author" to your last name to bold it
+    if (grepl("Author", last, ignore.case = TRUE)) {
+      sprintf("*%s, %s.*", last, initial)
+    } else {
+      sprintf("%s, %s.", last, initial)
+    }
+  }, USE.NAMES = FALSE)
+
+  paste(formatted, collapse = ", ")
+}
+
+# Under review FIRST (before journal articles)
+under_review <- Filter(function(e) !is.null(e$keywords) && grepl("under-review", e$keywords), entries)
+under_review <- under_review[order(sapply(under_review, function(e) -as.numeric(e$year %||% "0")))]
+
+if (length(under_review) > 0) {
+  cat('```{=typst}\n#cv-subsection("Under Review")\n```\n\n')
+
+  for (p in under_review) {
+    authors <- format_authors(p$author %||% "")
+    title <- p$title %||% ""
+    journal <- p$journal %||% ""
+    note <- p$note %||% ""
+
+    cite <- sprintf('%s, "%s"', authors, title)
+    if (note != "") cite <- sprintf("%s (%s at *%s*)", cite, tolower(note), journal)
+
+    cat(sprintf(
+      '```{=typst}\n#pub-entry([%s], date: "---")\n```\n\n',
+      cite
+    ))
+  }
+}
+
+```
+
+<!-- Journal Articles (published) -->
+
+```{r}
+#| output: asis
+
+# Re-parse for journal articles section
+bib_lines2 <- readLines("publications.bib")
+entries2 <- parse_bib(bib_lines2)
+
+published <- Filter(function(e) !is.null(e$keywords) && grepl("published", e$keywords), entries2)
+published <- published[order(sapply(published, function(e) -as.numeric(e$year %||% "0")))]
+
+cat('```{=typst}\n#cv-subsection("Published Articles")\n```\n\n')
+
+for (p in published) {
+  authors <- format_authors(p$author %||% "")
+  title <- p$title %||% ""
+  journal <- p$journal %||% ""
+  year <- p$year %||% ""
+  vol <- p$volume %||% ""
+  pages <- p$pages %||% ""
+  doi <- p$doi %||% ""
+
+  cite <- sprintf('%s (%s). "%s."', authors, year, title)
+  if (journal != "") cite <- sprintf("%s *%s*", cite, journal)
+  if (vol != "") cite <- sprintf("%s, %s", cite, vol)
+  if (pages != "") cite <- sprintf("%s: %s", cite, pages)
+  cite <- paste0(cite, ".")
+  if (doi != "") cite <- sprintf('%s doi: #link("https://doi.org/%s")[%s]', cite, doi, doi)
+
+  cat(sprintf(
+    '```{=typst}\n#pub-entry([%s], date: "%s")\n```\n\n',
+    cite, year
+  ))
+}
+```
+
+<!-- Grants -->
+
+<!-- ```{=typst}
+#cv-section("Grants")
+``` -->
+
+```{r}
+#| output: asis
+
+render_grants <- function(grant_list, subsection_title) {
+  if (length(grant_list) == 0) return(invisible())
+  cat(sprintf('```{=typst}\n#cv-subsection("%s")\n```\n\n', subsection_title))
+
+  for (g in grant_list) {
+    project <- gsub('"', '\\\\"', g$project %||% "")
+    cat(sprintf(
+      '```{=typst}\n#grant-entry(\n  title: "%s",\n  funder: "%s",\n  role: "%s",\n  amount: "%s",\n  date: "%s",\n  description: "%s",\n)\n```\n\n',
+      g$title, project, g$role %||% "", g$amount %||% "", g$date %||% "", g$description %||% ""
+    ))
+  }
+}
+
+render_grants(grants$funded, "Funded")
+render_grants(grants$submitted, "Submitted (Under Review)")
+render_grants(grants$in_preparation, "In Preparation")
+render_grants(grants$completed, "Completed")
+render_grants(grants$not_funded, "Not Funded")
+```
+
+<!-- Teaching -->
+
+```{=typst}
+#cv-section("Teaching")
+```
+
+```{r}
+#| output: asis
+for (t in teaching) {
+  cat(sprintf(
+    '```{=typst}\n#cv-subsection("%s")\n```\n\n',
+    t$institution
+  ))
+  for (c in t$courses) {
+    cat(sprintf(
+      '```{=typst}\n#teaching-entry(course: "%s", role: "%s", semesters: "%s")\n```\n\n',
+      c$course, c$role, c$semesters
+    ))
+  }
+}
+```
+
+
+<!-- Presentations -->
+
+<!-- ```{=typst}
+#cv-section("Presentations")
+``` -->
+
+```{r}
+#| output: asis
+
+render_presentations <- function(pres_list, subsection_title) {
+  if (length(pres_list) == 0) return(invisible())
+  cat(sprintf('```{=typst}\n#cv-subsection("%s")\n```\n\n', subsection_title))
+
+  for (p in pres_list) {
+    authors <- p$authors %||% ""
+    title <- gsub('"', '\\\\"', p$title %||% "")
+    venue <- gsub('"', '\\\\"', p$venue %||% "")
+    date <- p$date %||% ""
+
+    # CUSTOMIZE: Change "Author, Y." to match your abbreviated name
+    authors <- gsub("Author, Y\\.", "*Author, Y.*", authors)
+
+    content <- sprintf('%s "%s." %s.', authors, title, venue)
+
+    cat(sprintf(
+      '```{=typst}\n#presentation-entry([%s], date: "%s")\n```\n\n',
+      content, date
+    ))
+  }
+}
+
+render_presentations(presentations$invited, "Invited Talks")
+render_presentations(presentations$conference, "Conference Presentations")
+```
+
+<!-- Workshop Participation -->
+
+<!-- ```{=typst}
+#cv-subsection("Workshop Participation")
+```
+
+```{r}
+#| output: asis
+for (w in presentations$workshops) {
+  title <- gsub('"', '\\\\"', w$title %||% "")
+  venue <- gsub('"', '\\\\"', w$venue %||% "")
+  cat(sprintf(
+    '```{=typst}\n#presentation-entry([*%s.* %s.], date: "%s")\n```\n\n',
+    title, venue, w$date %||% ""
+  ))
+}
+```
+
+<!-- Honors, Awards & Fellowships -->
+
+```{=typst}
+#cv-section("Honors & Fellowships")
+```
+
+```{r}
+#| output: asis
+
+# cat('```{=typst}\n#cv-subsection("Fellowships")\n```\n\n')
+
+for (f in honors$fellowships) {
+  amount_str <- if (!is.null(f$amount) && f$amount != "") sprintf(" (%s)", f$amount) else ""
+  cat(sprintf(
+    '```{=typst}\n#service-entry(role: "%s", organization: "%s%s", date: "%s")\n```\n\n',
+    f$title, f$organization, amount_str, f$date %||% ""
+  ))
+}
+
+# cat('```{=typst}\n#cv-subsection("Awards & Research Support")\n```\n\n')
+
+# for (a in honors$awards) {
+#   amount_str <- if (!is.null(a$amount) && a$amount != "") a$amount else ""
+#   cat(sprintf(
+#     '```{=typst}\n#service-entry(role: "%s", organization: "%s", date: "%s")\n```\n\n',
+#     a$title, paste0(a$organization, if (amount_str != "") paste0(", ", amount_str) else ""),
+#     a$date %||% ""
+#   ))
+# }
+```
+
+<!-- Service -->
+
+<!-- ```{=typst}
+#cv-section("Service")
+``` -->
+
+```{r}
+#| output: asis
+
+# # Department / University
+# cat('```{=typst}\n#cv-subsection("Department & University")\n```\n\n')
+# for (s in service$department_university) {
+#   cat(sprintf(
+#     '```{=typst}\n#service-entry(role: "%s", organization: "%s", date: "%s")\n```\n\n',
+#     s$role, s$organization, s$date %||% ""
+#   ))
+# }
+
+# # Mentoring
+# cat('```{=typst}\n#cv-subsection("Mentoring")\n```\n\n')
+# for (m in service$mentoring) {
+#   details_str <- if (!is.null(m$details) && m$details != "") paste0(" ", m$details) else ""
+#   cat(sprintf(
+#     '```{=typst}\n#service-entry(role: "%s", organization: "%s%s", date: "%s")\n```\n\n',
+#     m$role, m$organization, details_str, m$date %||% ""
+#   ))
+# }
+
+# # Student Advising
+# cat('```{=typst}\n#cv-subsection("Student Advising")\n```\n\n')
+# students <- paste(service$student_advising, collapse = " #sym.dot.c ")
+# cat(sprintf('```{=typst}\n#cv-item([%s])\n```\n\n', students))
+
+# # Ad-Hoc Reviewing
+# cat('```{=typst}\n#cv-subsection("Ad-Hoc Reviewer")\n```\n\n')
+# journals <- paste(paste0("_", service$reviewing, "_"), collapse = "; ")
+# cat(sprintf('```{=typst}\n#cv-item([%s])\n```\n\n', journals))
+
+# # Abstract Reviewing
+# cat('```{=typst}\n#cv-subsection("Abstract Reviewer")\n```\n\n')
+# abstracts <- paste(service$abstract_reviewing, collapse = "; ")
+# cat(sprintf('```{=typst}\n#cv-item([%s])\n```\n\n', abstracts))
+
+# # Professional Organizations
+# cat('```{=typst}\n#cv-subsection("Professional Organizations")\n```\n\n')
+# for (o in service$memberships) {
+#   cat(sprintf(
+#     '```{=typst}\n#service-entry(role: "%s", organization: "%s", date: "%s")\n```\n\n',
+#     o$role, o$organization, o$date %||% ""
+#   ))
+# }
+```
+
+<!-- Extracurricular -->
+
+```{=typst}
+#cv-section("Extracurricular")
+```
+
+```{r}
+#| output: asis
+for (e in extracurricular) {
+  cat(sprintf(
+    '```{=typst}\n#extracurricular-entry(date: "%s", institution: "%s", role: "%s", location: "%s")\n```\n\n',
+    e$date, e$institution, e$role, e$location
+  ))
+}
+```

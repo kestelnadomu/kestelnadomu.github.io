@@ -1,0 +1,19 @@
+- institution: "LMU München"
+  department: "Munich, Germany"
+  degree: "PhD, Department of Statistics"
+  date: "ongoing"
+  details: |
+    Dissertation: "Neurosymbolic Architectures for Fairness in Algorithmic Decision-Making"\n
+    Advisor: Christoph Kern
+
+- institution: "University of Bamberg"
+  department: "Bamberg, Germany"
+  degree: "MS, Computing in the Humanities"
+  date: "2024"
+  details: |
+    Focus: Cognitive Systems, Thesis: "Tree-Vitality Classification from Image Data: A Comparison of Multispectral Index Scores and Deep Learning Approaches", Advisor: Ute Schmid
+
+- institution: "University of Bamberg"
+  department: "Bamberg, Germany"
+  degree: "BS, Psychology"
+  date: "2022"

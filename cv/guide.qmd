@@ -1,0 +1,130 @@
+---
+title: "Template Guide"
+format:
+  html:
+    toc: true
+---
+
+## Prerequisites
+
+- [Quarto](https://quarto.org/docs/get-started/) (v1.4+)
+- [R](https://cran.r-project.org/) with the `yaml` package
+- Fonts installed locally:
+  - **Source Sans 3**: `brew install --cask font-source-sans-3` (macOS) or download from [Google Fonts](https://fonts.google.com/specimen/Source+Sans+3)
+  - **FontAwesome 6** desktop fonts (OTF files in your system fonts folder). Download from [fontawesome.com](https://fontawesome.com/download)
+  - **Academicons** TTF. Download from [jpswalsh/academicons](https://github.com/jpswalsh/academicons)
+
+## Project Structure
+
+```
+quarto-typst-cv-template/
+├── cv.qmd                  # Main CV document (R + Typst)
+├── cv-template.typ         # Typst helper functions (layout, entries)
+├── typst-template.typ      # Quarto-Typst bridge (header, footer, page setup)
+├── typst-show.typ          # Pandoc template (metadata -> article())
+├── publications.bib        # BibTeX (keywords: published, under-review)
+├── data/
+│   ├── appointments.yml
+│   ├── education.yml
+│   ├── grants.yml
+│   ├── teaching.yml
+│   ├── presentations.yml
+│   ├── honors.yml
+│   └── service.yml
+└── output/
+    └── cv.pdf              # Generated PDF
+```
+
+## How It Works
+
+The rendering pipeline:
+
+1. **Quarto** reads `cv.qmd` and executes R chunks
+2. R chunks load YAML/BibTeX data and emit raw Typst blocks
+3. **Pandoc** converts to Typst format, using `typst-show.typ` to pass metadata to the template
+4. **Typst** compiles the final PDF using helpers from `cv-template.typ` and page setup from `typst-template.typ`
+
+## Customization
+
+### Change your contact info
+
+Edit the YAML front matter in `cv.qmd`:
+
+```yaml
+cv-name: "Your Name"
+cv-email: "you@university.edu"
+cv-phone: "555-123-4567"
+cv-url: "www.yoursite.com"
+cv-orcid: "0000-0000-0000-0000"
+cv-github: "yourgithub"
+cv-address: "Your Office, University, City, State ZIP"
+cv-date: "Month Year"
+```
+
+### Add a publication
+
+Edit `publications.bib`. Use `keywords = {published}` for journal articles or `keywords = {under-review}` for papers under review:
+
+```bibtex
+@article{yourkey2025,
+  author = {Last, First and Coauthor, Name},
+  title = {Your Paper Title},
+  journal = {Journal Name},
+  year = {2025},
+  doi = {10.xxxx/xxxxx},
+  keywords = {published}
+}
+```
+
+### Add an appointment, grant, course, etc.
+
+Edit the corresponding YAML file in `data/`. Each file follows a simple structure. See the sample files for the format.
+
+### Change the font
+
+Replace `"Source Sans 3"` with your preferred font in both `cv-template.typ` and `typst-template.typ`. Make sure the font is installed on your system.
+
+### Change colors
+
+Edit the color palette at the top of `cv-template.typ`:
+
+```typ
+#let color-darkgray = rgb("#000000")   // Main text
+#let color-gray = rgb("#333333")       // Secondary text
+#let color-lightgray = rgb("#777777")  // Detail text
+#let color-rule = rgb("#CCCCCC")       // Horizontal rules
+#let color-link = rgb("#1a5276")       // Hyperlinks
+```
+
+### Modify the header layout
+
+The contact info grid is in `typst-template.typ`. It uses a 3-column, 2-row layout with FontAwesome icons. Add, remove, or rearrange items there.
+
+### Bold your name in publications
+
+In `cv.qmd`, the `format_authors()` function handles author formatting. Change the name check to match yours:
+
+```r
+if (grepl("YourLastName", last, ignore.case = TRUE)) {
+  sprintf("*%s, %s.*", last, initial)  # Typst bold
+}
+```
+
+## Entry Types
+
+| Helper | Used For | Layout |
+|--------|----------|--------|
+| `cv-entry()` | Appointments | 3-col: institution, title, date |
+| `edu-entry()` | Education | 3-col: institution, degree, date |
+| `pub-entry()` | Publications | 2-col: citation, year |
+| `grant-entry()` | Grants | 2-col: title/details, date |
+| `teaching-entry()` | Teaching | 2-col: course, semesters |
+| `presentation-entry()` | Presentations | 2-col: content, date |
+| `service-entry()` | Service | 3-col: role, organization, date |
+
+## Tips
+
+- Typst uses `*bold*` (single asterisk), not `**bold**` like Markdown
+- All entry blocks use `breakable: false` to prevent splitting across page breaks
+- Pandoc escapes `@` as `\@` in Typst output; the template handles this automatically
+- DOIs in published articles are automatically hyperlinked

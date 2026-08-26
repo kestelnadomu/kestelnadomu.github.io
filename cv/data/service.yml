@@ -1,0 +1,31 @@
+# department_university:
+#   - role: "Academic Review Committee (Chair)"
+#     organization: "University of Example"
+#     date: "2025"
+
+#   - role: "Program Review Committee"
+#     organization: "College of Health Sciences, University of Example"
+#     date: "2024"
+
+
+# mentoring:
+#   - role: "Data"
+#     organization: "Applied Data Analytics (ADA) Initiative, LMU München"
+#     date: "2024 -- 2025"
+#     details: "Mentees: Student A, Student B"
+
+# student_advising:
+#   - "1 Master Thesis, LMU München, ongoing"
+#   - "1 Research Internship, LMU München, ongoing"
+
+# reviewing:
+#   - "AAAI 2027"
+
+# abstract_reviewing:
+#   - "AAAI"
+#   - "PAA"
+
+# memberships:
+#   - role: "Junior Researcher"
+#     organization: "Munich Center for Machine Learning (MCML)"
+#     date: "2025 -- now"

@@ -1,0 +1,25 @@
+# Quarto
+/.quarto/
+_site/
+
+# Typst intermediate
+cv.typ
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Quarto notebook cache
+**/*.quarto_ipynb
+*_files/
+*_cache/
